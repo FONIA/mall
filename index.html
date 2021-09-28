@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>华软小卖铺</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/pace.min.js" ></script>
+		<link rel="stylesheet" href="css/pace-theme-material.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+<body>
+<div class="main">
+<div class="navbar-fixed-top sear-hei">
+				<div class="input-group">
+						<div class="input-group-btn">
+						<button style="border: none;outline: none;" type="button" class="btn btn-default dropdown-toggle bord-ridus-left" data-toggle="dropdown">商品分类<span class="caret"></span>
+						</button>
+						<ul id="fenlie" class="dropdown-menu">
+
+						</ul>
+						</div>				
+					<input id="search" style="height:auto; border: none;" type="text" class="form-control bord-ridus-right" placeholder="输入搜索内容">
+				</div>
+</div>
+<div id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators" id="bannerol">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>   
+    <div class="carousel-inner" id="addbanner">
+        <div class="item active"><img class="guding" src="img/2.gif"></div>
+    </div>
+</div>
+<div class="main-ser">
+	<div class="main-sera" id="menu">
+		
+	</div>
+	<div class="main-serb">
+	<a class="msg-icon"> <img style="width: 50px;height: 50px;" class="lazy img-wh img-responsive center-block" data-original="img/tz.png"></a>
+	<div class="msg-cont">
+		 <div class="message-tz">
+		<div id="newsBox" class="messbox">
+        
+		</div>
+       </div>
+	</div>
+</div>
+
+</div>
+<div class="main-space"></div>
+<div class="text-tltle"> <a href="./splist.html?act=1"> <img src="img/spant.png"> </a> </div>
+<div class="list clx" id="record">
+	    	
+	   </div>
+<footer class="g-footer">
+    <section>Copyright&nbsp;©&nbsp;2018&nbsp;-&nbsp;<b class="b-text">ddtmall.cn</b>&nbsp;<a class="footer-text" href="http://www.miibeian.gov.cn" target="_blank">粤ICP备17126523号</a></section>
+</footer>
+<a id="uptop" style="display: none;"></a>
+<a id="alipay" onclick="alipay()"></a>
+<div class="main-footer"></div>
+<div class="navbar-fixed-bottom bom-hei">
+<a id="apage" href="index.html"><img class="img-dwh lazy img-responsive center-block" data-original="img/index.png" /><span class="inco_txt">首页</span></a>
+<a id="bpage" href="car.html"><span id="car-num" class="badge list-span-down"></span><img class="img-dwh lazy img-responsive center-block" data-original="img/car.png" /><span class="inco_txt">购物车</span></a>
+<a id="cpage" href="list.html"><img class="img-dwh lazy img-responsive center-block" data-original="img/flei.png" /><span class="inco_txt">分类</span></a>
+<a id="dpage" href="server.html"><img class="img-dwh lazy img-responsive center-block" data-original="img/server.png" /><span class="inco_txt">服务</span></a>
+</div>
+</div>	
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" >华软水票(免配送费)</h4>
+            </div>
+              <div class="modal-body text-center">
+           <b>今日价格<span id="water-pric" style="font-size:16px; color:#FF6133;"></span> 元/桶</b><hr>
+           <input id="waterid" type="hidden" value="">
+           <input id="input1" type="text" class="form-control down-mar" placeholder="输入配送宿舍号">
+           <input id="input2" type="number" class="form-control down-mar" placeholder="输入手机号">
+          <div class="form-group">
+<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_alipay',1);"><img src="img/alipay.ico" class="logo">支付宝</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_qqpay',1);"><img src="img/qqpay.ico" class="logo">QQ钱包</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_wxpay',1);"><img src="img/wechat.ico" class="logo">微信支付</button></div>
+           <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+              </div>         
+        </div>
+    </div>
+</div>	
+<div class="modal fade" id="myModal26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" >关注微信公众号：fonniao (配送员、游戏代练、货源API接口免费提供)</h4>
+            </div>
+              <div class="modal-body text-center">
+            <img class="img-responsive center-block" src="img/weixin.jpg"/>              
+           <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+              </div>         
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="sp-info"></h4>
+            </div>
+              <div class="modal-body text-center">
+            <table class="table table-bordered"><thead><tr><th id="sp-pric" class="car-ps"></th></tr><tr><th id="sp-ps" class="car-ps"></th></tr></thead></table>
+           <input id="spid" type="hidden" value="">
+           <input id="ipt1" type="text" class="form-control down-mar" placeholder="输入配送宿舍号">
+           <input id="ipt2" type="number" class="form-control down-mar" placeholder="输入手机号，作为收货依据">
+          <div class="form-group">
+<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_alipay',2);"><img src="img/alipay.ico" class="logo">支付宝</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_qqpay',2);"><img src="img/qqpay.ico" class="logo">QQ钱包</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_wxpay',2);"><img src="img/wechat.ico" class="logo">微信支付</button></div>
+           <div class="down-mar"></div>
+           <div class="alert alert-warning"><b>下单即同意：下单后若非商品缺货不退款。配送物品请当面核对清楚，缺坏错件请勿收货，一旦收货，订单即配送完成，此后产生的纠纷与平台无关。</b></div>
+           <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+              </div>         
+        </div>
+    </div>
+</div>	
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">官方微信公众号：fonniao</h4>
+      </div>
+	  <div class="modal-body">
+<h4 class="text-center">关注微信公众号首次下单降1块！</h4>
+<hr class="layui-bg-blue">
+<div align="center">
+  <p><img src="img/weixin.jpg" width="222" height="220"></p>
+  <p></p>微信扫一扫 关注"微信公众号"不定时发放福利
+</div>
+<div align="center"></div>
+	  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">知道啦</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">赚钱</h4>
+            </div>
+            <ul class="nav nav-tabs">
+	<li class="active"><a href="#zxtix" data-toggle="tab">推广链接</a></li>
+	<li><a href="#odcheck" data-toggle="tab">配送、代练等</a></li>
+	<li><a href="#otherc" data-toggle="tab">商业合作</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane fade active in" id="zxtix">
+<div class="modal-body">
+<div class="alert alert-warning down-mar">通过推广链接下单即可享受随机（0.1~0.5元/单）返现收益，自用省钱、推广赚钱！</div>
+<div align="center">
+<input id="uemil" type="email" class="form-control down-mar" placeholder="输入手机号注册">
+<div id="pay_frame" class="form-group text-center" style="display:none;">
+<div class="alert alert-success">推广收益需要登陆后台才能提现，请注意截图账号密码，手机号仅能注册一次！后台地址加Q群：711255672查看</div>
+<div class="form-group">
+<div class="input-group"><div class="input-group-addon">账号</div>
+<input type="text" id="zhh" class="form-control"></div></div>
+<div class="form-group">
+<div class="input-group"><div class="input-group-addon">密码</div>
+<input type="text" id="mima" class="form-control"></div></div>
+<div class="form-group">
+<div class="input-group"><div class="input-group-addon">推广链接</div>
+<input type="text" id="tghref" class="form-control"></div></div>
+</div>
+<a id="tuiguan" class="btn btn-success btn-block">立即生成</a>
+<hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+</div>
+</div>
+</div>   
+<div class="tab-pane fade" id="odcheck">
+<div class="modal-body">
+<h4 class="text-center">关注微信公众号回复：兼职</h4>
+<hr class="layui-bg-blue">
+<div align="center">
+  <p><img src="img/weixin.jpg" width="222" height="220"></p>
+ <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+</div>
+</div>
+</div>   
+<div class="tab-pane fade" id="otherc">
+<div class="modal-body">
+<h4 class="text-center">提供商业API、寄卖、商品推广等服务</h4>
+<hr class="layui-bg-blue">
+<div align="center">
+<a href="https://wpa.qq.com/msgrd?v=3&uin=3069193298&site=qq&menu=yes" target="_blank" class="btn btn-success btn-block">联系我们</a>
+ <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+</div>
+</div>
+</div>  
+</div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+</div>
+<div id="tong" style="display: none;"><img id="tongimg" src="img/alihb.png" /></div>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js" ></script>
+<script type="text/javascript">
+document.write('<script type="text/javascript" src="js/index.js?v='+Math.random()+'" ><\/script>');
+$('#myCarousel').carousel({interval: 4000});
+$(window).scroll(function(){if($(window).scrollTop()>100) {$('#uptop').fadeIn(500);}else{$("#uptop").fadeOut(500);}});
+$("#uptop").click(function(){$('body,html').animate({scrollTop:0},1000);return false;});
+$(document).ready(function(){var cart = Read();if(cart.Items.length==0){}else{$("#car-num").html(cart.Items.length);}
+var pic_show = $.cookie('pic_show');if(pic_show!=1){$.cookie('pic_show',1,{ expires:1});$("#myModal4").modal("show");}});
+var area = document.getElementById('newsBox');area.innerHTML+=area.innerHTML;var speed = 50;area.scrollTop = 0;var lheight=20;
+var waitt=4000;var myreScroll;function scrollUp(){if(area.scrollTop>=area.scrollHeight/2){area.scrollTop=0;}else{area.scrollTop ++;
+if(area.scrollTop % lheight==0){clearInterval(myScroll);myreScroll=setTimeout('myScroll=setInterval("scrollUp()",speed)',waitt);}}}
+var myScroll = setInterval("scrollUp()",speed);area.onmouseenter = function(){clearInterval(myScroll);clearTimeout(myreScroll);}
+area.onmouseleave = function(){clearInterval(myScroll);myScroll = setInterval("scrollUp()",speed);}
+function alipay(){layer.open({type: 1,title: '支付宝搜索：7600019',shadeClose: true,closeBtn: 0,skin: 'layer_bg',content: $('#tong')});}
+</script>
+</body>
+</html>

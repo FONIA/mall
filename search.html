@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>查询页面</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+<div class="main">
+<div class="navbar-fixed-top nav-list">
+<div class="nav-img">
+	<a href="javascript:void(history.go(-1));"><img src="img/return.png" /></a>
+</div>
+<div class="nav-ser-w">
+	<input id="searchcont" type="text" class="searchInp" placeholder="请输入您想找的商品">
+			</div>
+<a id="searchbtn" class="search-btn">搜索</a>
+</div>
+<div class="spance"></div>
+<div class="modal-body">
+	<dt>快速分类</dt>
+	<div class="down-mar"></div>
+<div class="listt clx" id="record">
+	
+</div>					
+</div>
+
+</div>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js" ></script>
+<script type="text/javascript">
+document.write('<script type="text/javascript" src="js/list.js?v='+Math.random()+'" ><\/script>');
+$(function(){$("#searchcont").select();});
+$("#searchbtn").click(function (){var searchStr = $("#searchcont").val();if(searchStr=='') return false;
+var links = "./splist.html?act=" + searchStr;window.location.href=links;});
+</script>
+</body>
+</html>

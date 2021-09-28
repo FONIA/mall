@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>商品页</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+<div class="main">
+<div class="navbar-fixed-top nav-list">
+<div class="nav-img">
+	<a href="javascript:void(history.go(-1));"><img src="./img/return.png" /></a>
+</div>
+<div class="nav-ser-w">
+	<form id="splistsub" action="splist.html" method="get">
+	<input name="act" type="text" class="searchInp" placeholder="请输入您想找的商品">
+	</form>
+			</div>
+<a onclick="document.getElementById('splistsub').submit();" class="search-btn">搜索</a>
+</div>
+<div class="spance"></div>
+<div id="splist" class="modal-body list-main" style="padding: 10px;">
+
+</div>
+</div>
+<a id="uptop2" style="display: none;"></a>
+<a href="car.html" id="salecar"><span id="car-num" class="badge list-span-down"></span></a>
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="sp-info"></h4>
+            </div>
+              <div class="modal-body text-center">
+            <table class="table table-bordered"><thead><tr><th id="sp-pric" class="car-ps"></th></tr><tr><th id="sp-ps" class="car-ps"></th></tr></thead></table>
+           <input id="spid" type="hidden" value="">
+           <input id="ipt1" type="text" class="form-control down-mar" placeholder="输入配送宿舍号">
+           <input id="ipt2" type="number" class="form-control down-mar" placeholder="输入手机号，作为收货依据">
+          <div class="form-group">
+<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_alipay',2);"><img src="img/alipay.ico" class="logo">支付宝</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_qqpay',2);"><img src="img/qqpay.ico" class="logo">QQ钱包</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_wxpay',2);"><img src="img/wechat.ico" class="logo">微信支付</button></div>
+           <div class="down-mar"></div>
+           <div class="alert alert-warning"><b>下单即同意：下单后若非商品缺货不退款。配送物品请当面核对清楚，缺坏错件请勿收货，一旦收货，订单即配送完成，此后产生的纠纷与平台无关。</b></div>
+           <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+              </div>         
+        </div>
+    </div>
+</div>	
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js" ></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript">
+document.write('<script type="text/javascript" src="js/splist.js?v='+Math.random()+'" ><\/script>');
+</script>
+</body>
+</html>

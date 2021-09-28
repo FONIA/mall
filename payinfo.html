@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<title>订单付款状态</title>
+	</head>
+	<body>
+<style>
+body{
+	background: #bcbcda;
+	font-family: "微软雅黑", "宋体", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.main{
+    margin: 0px auto;
+    padding: 10px;
+    background: #292942;
+    border-radius: .75em;
+    -webkit-filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+    filter: drop-shadow(1px 2px 5px rgba(0,0,0,.3));
+    box-shadow: 0 2px 2px #FF9800, 0 0px 5px rgba(255, 152, 0, 0.1), 0 0px 4px rgba(0,0,0,.35), 0 5px 20px rgba(255, 152, 0, 0.18), 0 15px 50px #FF9800, inset 0 0 15px rgba(255,255,255,.05);
+}
+.order{
+	font-size: 16px;
+	text-align: center;
+	color: #fff;
+}
+.mbor{
+	border-bottom: 1px solid #fff;
+}
+.main-f{
+	height: 100%;
+	margin: 0 auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: .3em;
+}
+button:hover{
+	box-shadow: 0 3px 5px -5px rgba(0, 0, 0, 0.3);
+    color: #ff9800;
+}
+.cl:after, .cl:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+.liuyan{
+	width: 80%;
+	font-size: 12px;
+	outline: none;
+	border: none;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.zhuyi{
+	text-align: center;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+}
+.alert-success{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-false{
+    color: #ff2110;
+    background-color: #f7ccc9;
+    border-color: #f7ccc9;
+    overflow-y: hidden;white-space:nowrap;
+}
+.alert-false2{
+    color: #ff5722;
+    background-color: #f5e0a1;
+    border-color: #f5e0a1;
+    overflow-y: hidden;white-space:nowrap;
+}
+.alert{
+	font-size: 16px;
+    padding: 25px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.fhui{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size:14px;
+}
+	</style>
+		<div class="main">
+			<p class="order">订单付款状态</p>
+			<div class="main-f">
+				<p class="mbor"></p>
+				<div id="tips">
+					
+				</div>
+				<p class="mbor"></p>        				
+            <div>
+         	<a class="zhuyi" href="#" onclick="document.getElementById('tip-f').style.display = '';document.getElementById('tip-s').style.display = ''; return false;">关注DDTmall商城公众号，下单福利更优惠！(点击查看)</a>
+         	<p id="tip-f" style="display: none;border-bottom: 1px solid #fff;"></p>
+            <p id="tip-s" class="goods" style="display: none;color:#ffeb3b;">
+            <img src="weixin.jpg" />
+            </p>
+         	<p class="mbor"></p>
+         	<p><a class="fhui" href="./">返回_DDTmall商城</a></p>
+         	</div>
+			</div>		
+		</div>	
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript">
+function GetQueryString(name){var reg=new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
+var r=window.location.search.substr(1).match(reg);if(r!=null) return unescape(r[2]);return null;}
+var tip=GetQueryString('tip');
+switch(tip){
+	case 'yes':$('#tips').append('<div class="alert alert-success">订单付款成功！</div>');break;
+	case 'no':$('#tips').append('<div class="alert alert-false">订单未付款！</div>');break;
+	case 'error':$('#tips').append('<div class="alert alert-false2">已付款，但后台故障，请联系QQ：3069193298补单！</div>');break;
+	default:$('#tips').append('<div class="alert alert-false2">未知错误！</div>');break;
+}
+</script>
+</body>
+</html>

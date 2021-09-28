@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>购物车</title>
+		<script type="text/javascript" src="js/pace.min.js" ></script>
+		<link rel="stylesheet" href="css/pace-theme-material.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body style="background-color: #fff;">
+<div class="main clx">
+<div class="navbar-fixed-top nav-list">
+<div class="nav-img">
+	<a href="javascript:void(history.go(-1));"><img src="img/return.png" /></a>
+</div>
+<b>购物清单</b>
+<a data-toggle="modal" data-target="#myModal" style="position:absolute;right: 20px;color: #ff9800;cursor: pointer;">首单优惠?</a>
+</div>
+<div class="spance"></div>
+<div class="clx col-xs-12 center-block car-botom">
+	<div class="table-responsive">
+        <table class="table table-striped">
+          <thead class="bg-primary text-white"><tr><th>商品</th><th>单价/元</th><th>数量</th><th>操作</th></tr></thead>
+          <tbody id="paycar">
+          	
+</tbody>
+        </table>
+      </div>
+      <hr>
+      <div class="shopcart_mod_title" id="cnxhTitle" style=""><span class="shopcart_mod_title_text">可能你还想要</span><hr>
+      <div class="listt clx" id="record">
+      </div>	
+      </div>
+</div> 
+<div class="navbar-fixed-bottom car-bom">
+<a onclick="Clear()">清空</a>
+<a onclick="payinfo()" class="bg-info text-white" data-toggle="modal" data-target="#myModal2">结算(￥)</a>
+</div>
+</div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" >关注微信公众号：fonniao 首次下单降1块！</h4>
+            </div>
+              <div class="modal-body text-center">
+            <img class="img-responsive center-block" src="img/weixin.jpg"/>              
+           <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+              </div>         
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" >订单结算</h4>
+            </div>
+              <div class="modal-body text-center">             	            	
+           <table class="table table-bordered"><thead><tr><th id="sp-pric" class="car-ps" colspan="3"></th></tr><tr><th>1~3层</th><th>4~6层</th><th>7~8层</th></tr></thead>
+	<tbody><tr><td id="sp-ps" class="car-ps"></td><td id="sp-pst" class="car-ps"></td><td id="sp-psr" class="car-ps"></td></tr></tbody></table>
+           <hr>
+           <select id="inpt1" class="form-control down-mar">
+            	<option value="0">请选择配送楼层</option>
+            	<option value="1">1~3层</option>
+            	<option value="2">4~6层</option>
+            	<option value="3">7~8层</option>
+            </select>
+           <input type="text" class="form-control down-mar" id="inpt2" autocomplete="off" placeholder="输入配送地址">
+           <input type="text" class="form-control down-mar" id="inpt3" autocomplete="off" placeholder="输入手机号，作为收货依据">
+          <div class="form-group">
+<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_alipay');"><img src="img/alipay.ico" class="logo">支付宝</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_qqpay');"><img src="img/qqpay.ico" class="logo">QQ钱包</button>&nbsp;<button type="submit" class="btn btn-default paymrg" onclick="ordtopayt('buy_wxpay');"><img src="img/wechat.ico" class="logo">微信支付</button></div>
+           <div style="margin-bottom: 0px;" class="alert alert-warning"><b>下单即同意：1.若非商品缺货下单后不退款。配送物品请当面核对清楚，缺坏错件请勿收货，一旦收货，订单即配送完成，此后产生的纠纷与平台无关。2.<span class="text-danger">若订单配送楼层与实际配送地址不符，将取消订单</span>，由此产生的退款统一于周日联系客服结算！</b></div>
+           <hr><small style="color:#999;">关注微信公众号：fonniao 不定时发送福利！</small>
+              </div>         
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>	
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js" ></script>
+<script type="text/javascript">
+document.write('<script type="text/javascript" src="js/car.js?v='+Math.random()+'" ><\/script>');
+</script>
+</body>
+</html>
